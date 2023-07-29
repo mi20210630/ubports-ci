@@ -67,10 +67,10 @@ jobs:
       run: |
         source halium.env
         cd $ANDROID_ROOT
-        repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
+        ~/bin/repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
         wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/.repo/local_manifests/$VENDOR_$DEVICE.xml
-        repo sync -j8 -c --no-clone-bundle --no-tags
+        ~/bin/repo sync -j8 -c --no-clone-bundle --no-tags
     
     - name: Build HAL
       run: |

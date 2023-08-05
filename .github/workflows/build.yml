@@ -71,7 +71,7 @@ jobs:
         mkdir -p $ANDROID_ROOT/.repo/local_manifests 
         wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml 
         ./halium/devices/setup cereus
-        ~/bin/repo sync -j8 -c --no-clone-bundle --no-tags
+#        ~/bin/repo sync -j8 -c --no-clone-bundle --no-tags
     
     - name: Build HAL
       run: |
@@ -80,21 +80,21 @@ jobs:
         bash -x build-hal.sh
       shell: bash
 
-    - name : Upload boot image
+    - name : Upload hybris-boot image
       uses: actions/upload-artifact@master
       with:
-        name: halium-boot image
-        path: /home/runner/work/halium/out/target/product/clover/halium-boot.img
+        name: hybris-boot image
+        path: /home/runner/work/halium/out/target/product/cereus/hybris-boot.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
       with:
          name: System image
-         path: /home/runner/work/halium/out/target/product/clover/system.img
+         path: /home/runner/work/halium/out/target/product/cereus/system.img
 
 
-    - name : Upload vendor image
+    - name : Upload halium-boot image
       uses: actions/upload-artifact@master
       with:
-         name: Vendor image
-         path: /home/runner/work/halium/out/target/product/clover/vendor.img
+         name: halium-boot image
+         path: /home/runner/work/halium/out/target/product/cereus/halium-boot.img

@@ -71,9 +71,9 @@ jobs:
         repo sync -c -j 16
         #mkdir -p $ANDROID_ROOT/.repo/local_manifests 
         wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/devices/manifests/$VENDOR_$DEVICE.xml 
-        ./devices/setup cereus
+        ./halium/devices/setup cereus
 #        ~/bin/repo sync -j8 -c --no-clone-bundle --no-tags
-    
+      shell: bash
     - name: Build HAL
       run: |
         sudo apt-get install -y python-is-python2

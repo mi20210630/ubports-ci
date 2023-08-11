@@ -69,10 +69,12 @@ jobs:
         cd $ANDROID_ROOT 
         ~/bin/repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1 
         repo sync -c -j 16
-        mkdir -p $ANDROID_ROOT/.repo/local_manifests 
-        wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml 
-        ~/bin/repo sync -c -j 16
+        #mkdir -p $ANDROID_ROOT/.repo/local_manifests 
+        wget https://raw.githubusercontent.com/ubports-xiaomi-cereus/manifest/master/xiaomi_cereus.xml -O $ANDROID_ROOT/halium/devices/manifests/$VENDOR_$DEVICE.xml 
+        ./halium/devices/setup cereus
+#        ~/bin/repo sync -j8 -c --no-clone-bundle --no-tags
       shell: bash
+    
     - name: Build HAL
       run: |
         sudo apt-get install -y python-is-python2

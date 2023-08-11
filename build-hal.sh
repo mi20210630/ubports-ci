@@ -13,5 +13,6 @@ breakfast $DEVICE
 ./halium/halium-boot/check-kernel-config device/xiaomi/cereus/BoardConfig.mk
 mka mkbootimg
 export USE_HOST_LEX=yes
+mka halium-boot
 mka hybris-boot
 mka systemimage

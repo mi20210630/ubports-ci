@@ -15,5 +15,5 @@ breakfast $DEVICE
 mka mkbootimg
 export USE_HOST_LEX=yes
 mka halium-boot
-mka hybris-boot
-mka systemimage
+#mka hybris-boot
+#mka systemimage

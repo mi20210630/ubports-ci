@@ -77,7 +77,7 @@ jobs:
     
     - name: Build HAL
       run: |
-        sudo apt-get install -y python-is-python2
+        sudo apt-get install -y python2
         sudo apt remove python-is-python3 python3 python3-dev
         sudo dpkg --add-architecture i386
         sudo apt-get update

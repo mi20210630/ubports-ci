@@ -86,17 +86,17 @@ jobs:
         bash -x build-hal.sh
       shell: bash
 
-    - name : Upload hybris-boot image
-      uses: actions/upload-artifact@master
-      with:
-        name: hybris-boot image
-        path: /home/runner/work/halium/out/target/product/cereus/hybris-boot.img
+#    - name : Upload hybris-boot image
+#      uses: actions/upload-artifact@master
+#      with:
+#        name: hybris-boot image
+#        path: /home/runner/work/halium/out/target/product/cereus/hybris-boot.img
 
-    - name : Upload system image
-      uses: actions/upload-artifact@master
-      with:
-         name: System image
-         path: /home/runner/work/halium/out/target/product/cereus/system.img
+#    - name : Upload system image
+#      uses: actions/upload-artifact@master
+#      with:
+#         name: System image
+#         path: /home/runner/work/halium/out/target/product/cereus/system.img
 
 
     - name : Upload halium-boot image

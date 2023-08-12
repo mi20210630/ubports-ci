@@ -78,6 +78,7 @@ jobs:
     - name: Build HAL
       run: |
         sudo apt-get install -y python-is-python2
+        sudo apt remove python-is-python3 python3 python3-dev
         chmod +x build-hal.sh
         bash -x build-hal.sh
       shell: bash

@@ -19,7 +19,8 @@ export USE_CCACHE=1
 ./halium/halium-boot/check-kernel-config device/xiaomi/cereus/BoardConfig.mk
 breakfast $DEVICE
 mka mkbootimg
-cp $ANDROID_ROOT/out/mkbootimg ~/bin
+cp /home/runner/work/halium/out/host/linux-x86/bin/mkbootimg ~/bin
+chmod a+x ~/bin/mkbootimg
 export USE_HOST_LEX=yes
 mka halium-boot
 #mka hybris-boot

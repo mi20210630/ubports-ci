@@ -8,7 +8,7 @@ libgl1-mesa-dev g++-multilib mingw-w64-i686-dev tofrodos \
 python3-markdown libxml2-utils xsltproc zlib1g-dev:i386 schedtool \
 liblz4-tool bc lzop imagemagick libncurses5 rsync \
 python-is-python3 python2
-sudo apt -y install mkbootimg
+#sudo apt -y install mkbootimg
 source build/envsetup.sh
 bash hybris-patches/apply-patches.sh --mb
 export USE_CCACHE=1
@@ -19,6 +19,7 @@ export USE_CCACHE=1
 ./halium/halium-boot/check-kernel-config device/xiaomi/cereus/BoardConfig.mk
 breakfast $DEVICE
 mka mkbootimg
+cp $ANDROID_ROOT/out/mkbootimg ~/bin
 export USE_HOST_LEX=yes
 mka halium-boot
 #mka hybris-boot

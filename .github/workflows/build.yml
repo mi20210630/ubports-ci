@@ -106,8 +106,8 @@ jobs:
          name: halium-boot image
          path: /home/runner/work/halium/out/target/product/cereus/halium-boot.img
          
-    - name: Start SSH via Ngrok
-      if: ${{ failure() }}
-      uses: dvkunion/CollieTrickster@main
-      with:
-          token: 2c9dcc3512d0f3cdde634436a6cba024
+    #- name: Start SSH via Ngrok
+      #if: ${{ failure() }}
+      #uses: dvkunion/CollieTrickster@main
+      #with:
+         # token: 2c9dcc3512d0f3cdde634436a6cba024
